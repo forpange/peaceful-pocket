@@ -27,10 +27,10 @@ export function ProfileGate({ quiz, lang, onContinue, onBack }: Props) {
     if (!name) return;
     onContinue({
       nickname: name,
-      age: full ? age || undefined : undefined,
-      city: full ? city.trim() || undefined : undefined,
-      email: full ? email.trim() || undefined : undefined,
-      whatsapp: full ? whatsapp.trim() || undefined : undefined,
+      ...(full && age ? { age } : {}),
+      ...(full && city.trim() ? { city: city.trim() } : {}),
+      ...(full && email.trim() ? { email: email.trim() } : {}),
+      ...(full && whatsapp.trim() ? { whatsapp: whatsapp.trim() } : {}),
       consent: full ? consent : false,
       source: getSource(),
     });
