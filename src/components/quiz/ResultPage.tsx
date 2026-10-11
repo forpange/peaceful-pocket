@@ -88,7 +88,7 @@ export function ResultPage({
       tags: computed.tags,
       ...(computed.mode === 'viral' ? { score: computed.score } : {}),
       total: computed.total,
-      archetypeId: computed.archetypeId,
+      ...(computed.archetypeId ? { archetypeId: computed.archetypeId } : {}),
       shareId,
     }).catch(() => {});
     if (computed.mode === 'viral' && shareId) {
