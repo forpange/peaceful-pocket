@@ -89,7 +89,7 @@ export function ResultPage({
       ...(computed.mode === 'viral' ? { score: computed.score } : {}),
       total: computed.total,
       ...(computed.archetypeId ? { archetypeId: computed.archetypeId } : {}),
-      shareId,
+      ...(shareId ? { shareId } : {}),
     }).catch(() => {});
     if (computed.mode === 'viral' && shareId) {
       saveScore({ shareId, quizId: quiz.id, nickname: profile.nickname, score: computed.score!, total: computed.total }).catch(
