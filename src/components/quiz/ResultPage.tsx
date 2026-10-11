@@ -57,7 +57,7 @@ export function ResultPage({
     const points: Record<string, number> = {};
     questions.forEach((q, i) => {
       const pts = q.options[answers[i] ?? 0]?.points;
-      if (pts) for (const k of Object.keys(pts)) points[k] = (points[k] || 0) + pts[k];
+      if (pts) for (const k of Object.keys(pts)) points[k] = (points[k] || 0) + (pts[k] ?? 0);
     });
     let winner = quiz.archetypes?.[0];
     let best = -1;
