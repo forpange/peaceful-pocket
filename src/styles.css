@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -142,3 +143,135 @@
     color: var(--color-foreground);
   }
 }
+
+/* ---------------- QuizPop "card carnival" theme ---------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', system-ui, sans-serif;
+  background: #fff7ed;
+  color: #431407;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Baloo 2', ui-rounded, system-ui, sans-serif;
+}
+
+.quiz-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  border: 2px solid #ffedd5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.btn-chunky {
+  font-family: 'Baloo 2', ui-rounded, system-ui, sans-serif;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.875rem 1.5rem;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-chunky:active {
+  box-shadow: none;
+  transform: translateY(6px);
+}
+
+.btn-chunky:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.option-card {
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 2px solid #ffedd5;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #431407;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.option-card:hover {
+  border-color: #fb923c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.option-card.selected {
+  border-color: #f97316;
+  background: #fff7ed;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.input-chunky {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #431407;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input-chunky:focus {
+  border-color: #f97316;
+}
+
+.input-chunky::placeholder {
+  color: #fdba74;
+  font-weight: 600;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.25) 2px, transparent 2px);
+  background-size: 26px 26px;
+}
+
+@keyframes qp-pop-in {
+  0% { opacity: 0; transform: scale(0.85) translateY(12px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes qp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes qp-wiggle {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+@keyframes qp-bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-pop-in { animation: qp-pop-in 0.35s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+.animate-float { animation: qp-float 5s ease-in-out infinite; }
+.animate-wiggle { animation: qp-wiggle 1.4s ease-in-out infinite; }
+.animate-bounce-soft { animation: qp-bounce-soft 1.6s ease-in-out infinite; }

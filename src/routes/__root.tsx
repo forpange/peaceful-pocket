@@ -78,14 +78,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "QuizPop — Fun quizzes that get you" },
+      {
+        name: "description",
+        content:
+          "Make a quiz about yourself, share it with friends, and discover your style, skincare, shopping and planning personality. Mazay ke quiz!",
+      },
+      { name: "author", content: "QuizPop" },
+      { property: "og:title", content: "QuizPop — Fun quizzes that get you" },
+      {
+        property: "og:description",
+        content:
+          "Make a quiz, share with friends, see who really knows you. Plus: find your style, skincare & shopping personality!",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-cover.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "QuizPop — Fun quizzes that get you" },
+      {
+        name: "twitter:description",
+        content: "Make a quiz, share with friends, see who really knows you!",
+      },
+      { name: "twitter:image", content: "/og-cover.png" },
+      { name: "theme-color", content: "#f97316" },
     ],
     links: [
       {
