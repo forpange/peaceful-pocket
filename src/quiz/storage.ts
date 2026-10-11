@@ -66,7 +66,7 @@ export function getSource(): string {
     const utm = u.searchParams.get('utm_source');
     if (utm) return utm.toLowerCase();
     const m = window.location.hash.match(/src=([a-z]+)/i);
-    if (m) return m[1].toLowerCase();
+    if (m && m[1]) return m[1].toLowerCase();
     const r = document.referrer;
     if (r.includes('instagram')) return 'instagram';
     if (r.includes('facebook')) return 'facebook';

@@ -2,8 +2,8 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 /* Optional cloud backend. If these env vars are missing, the app silently
    falls back to localStorage (works fully in preview, single device). */
-const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
+const url = import.meta.env["VITE_SUPABASE_URL"] as string | undefined;
+const anonKey = import.meta.env["VITE_SUPABASE_ANON_KEY"] as string | undefined;
 
 export const supabaseConfigured = Boolean(url && anonKey);
 

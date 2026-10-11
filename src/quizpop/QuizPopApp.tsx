@@ -123,7 +123,7 @@ function HomeScreen({ lang, onSelect }: { lang: Lang; onSelect: (q: QuizConfig) 
 /* ---------------- quiz detail: count -> create / profile -> play -> result ---------------- */
 
 function QuizDetailScreen({ quiz, lang, onHome }: { quiz: QuizConfig; lang: Lang; onHome: () => void }) {
-  const [count, setCount] = useState(quiz.questionCounts[0]);
+  const [count, setCount] = useState(quiz.questionCounts[0] ?? 10);
   const [stage, setStage] = useState<'detail' | 'create' | 'profile' | 'playing' | 'result'>('detail');
   const [profile, setProfile] = useState<PlayerProfile | null>(null);
   const [answers, setAnswers] = useState<number[]>([]);
