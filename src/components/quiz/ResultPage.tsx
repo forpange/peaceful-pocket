@@ -52,11 +52,11 @@ export function ResultPage({
       return { mode: 'viral' as const, score, total: questions.length, tags: [] as Tag[], archetypeId: undefined as string | undefined };
     }
     const tags = Array.from(
-      new Set(questions.flatMap((q, i) => q.options[answers[i]]?.tags ?? []))
+      new Set(questions.flatMap((q, i) => q.options[answers[i] ?? 0]?.tags ?? []))
     ) as Tag[];
     const points: Record<string, number> = {};
     questions.forEach((q, i) => {
-      const pts = q.options[answers[i]]?.points;
+      const pts = q.options[answers[i] ?? 0]?.points;
       if (pts) for (const k of Object.keys(pts)) points[k] = (points[k] || 0) + pts[k];
     });
     let winner = quiz.archetypes?.[0];
@@ -86,7 +86,7 @@ export function ResultPage({
       profile: { ...profile, source: src },
       answers,
       tags: computed.tags,
-      score: computed.mode === 'viral' ? computed.score : undefined,
+      ...(computed.mode === 'viral' ? { score: computed.score } : {}),
       total: computed.total,
       archetypeId: computed.archetypeId,
       shareId,

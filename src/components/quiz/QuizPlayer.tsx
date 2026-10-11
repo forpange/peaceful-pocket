@@ -21,7 +21,7 @@ export function QuizPlayer({ quiz, questions, lang, onFinish, onBack }: Props) {
   const { burst } = useConfetti();
 
   const total = questions.length;
-  const q = questions[idx];
+  const q = questions[idx] ?? questions[0]!;
 
   const pick = (oi: number) => {
     if (picked !== null) return;
