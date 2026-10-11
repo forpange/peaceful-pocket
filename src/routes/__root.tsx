@@ -92,7 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Make a quiz, share with friends, see who really knows you. Plus: find your style, skincare & shopping personality!",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-cover.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "QuizPop — Fun quizzes that get you" },
       {
